@@ -9,7 +9,7 @@ const app = express();
 
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://YOUR-NETLIFY-SITE.netlify.app'
+  'https://inventory-management-system7007.netlify.app'
 ];
 
 app.use(cors({
