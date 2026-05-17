@@ -9,7 +9,8 @@ const app = express();
 
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://inventory-management-system-ibrahimitu.vercel.app'
+  'https://inventory-management-system-ibrahimitu.vercel.app',
+  'https://inventory-management-system-git-main-ibrahimitu.vercel.app'
 ];
 
 const corsOptions = {
