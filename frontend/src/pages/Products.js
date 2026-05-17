@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import API from '../services/api';
 
 function Products() {
@@ -17,7 +17,7 @@ function Products() {
   });
   const [editingId, setEditingId] = useState(null);
 
-  const fetchProducts = async () => {
+  const fetchProducts = useCallback(async () => {
     try {
       const params = {};
       if (search) params.search = search;
@@ -29,11 +29,11 @@ function Products() {
     } catch (error) {
       setMessage('Failed to load products');
     }
-  };
+  }, [search, categoryFilter, lowStockOnly]);
 
   useEffect(() => {
     fetchProducts();
-  }, [search, categoryFilter, lowStockOnly]);
+  }, [fetchProducts]);
 
   const handleChange = (e) => {
     setFormData({
