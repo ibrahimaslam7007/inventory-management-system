@@ -7,7 +7,16 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://YOUR-NETLIFY-SITE.netlify.app'
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
+
 app.use(express.json());
 
 const connectDB = async () => {
